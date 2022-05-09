@@ -17,6 +17,9 @@ endif()
 set(SLIC3R_SOURCES
     pchheader.cpp
     pchheader.hpp
+    AABBTreeIndirect.hpp
+    AABBMesh.hpp
+    AABBMesh.cpp
     BoundingBox.cpp
     BoundingBox.hpp
     BridgeDetector.cpp
@@ -171,6 +174,8 @@ set(SLIC3R_SOURCES
     ModelArrange.cpp
     MultiMaterialSegmentation.cpp
     MultiMaterialSegmentation.hpp
+    MeshNormals.hpp
+    MeshNormals.cpp
     CustomGCode.cpp
     CustomGCode.hpp
     Arrange.hpp
@@ -278,12 +283,11 @@ set(SLIC3R_SOURCES
     SLA/SupportTreeBuilder.hpp
     SLA/SupportTreeMesher.hpp
     SLA/SupportTreeMesher.cpp
-    SLA/SupportTreeBuildsteps.hpp
-    SLA/SupportTreeBuildsteps.cpp
+    SLA/SupportTreeUtils.hpp
     SLA/SupportTreeBuilder.cpp
-    SLA/Concurrency.hpp
     SLA/SupportTree.hpp
     SLA/SupportTree.cpp
+    SLA/SupportTreeStrategies.hpp
 #    SLA/SupportTreeIGL.cpp
     SLA/Rotfinder.hpp
     SLA/Rotfinder.cpp
@@ -303,11 +307,11 @@ set(SLIC3R_SOURCES
     SLA/SupportPoint.hpp
     SLA/SupportPointGenerator.hpp
     SLA/SupportPointGenerator.cpp
-    SLA/IndexedMesh.hpp
-    SLA/IndexedMesh.cpp
     SLA/Clustering.hpp
     SLA/Clustering.cpp
     SLA/ReprojectPointsOnMesh.hpp
+    SLA/DefaultSupportTree.hpp
+    SLA/DefaultSupportTree.cpp
 )
 
 add_library(libslic3r STATIC ${SLIC3R_SOURCES})
